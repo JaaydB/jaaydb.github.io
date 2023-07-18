@@ -2,31 +2,7 @@
 <html>
 <head>
   <!-- Add your head content here -->
-
-  <!-- Paste the CSS code for the profile popup styling here -->
-  <style>
-    .profile-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .profile-popup {
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translate(-50%, 5px);
-      padding: 10px;
-      background-color: #fff;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-      display: none;
-    }
-
-    .profile-container:hover .profile-popup {
-      display: block;
-    }
-
-    /* Additional styling as needed */
-  </style>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
 </head>
 <body>
   <!-- Your existing webpage content -->
@@ -36,23 +12,21 @@
     <button class="profile-button">Open Profile</button>
     <div class="profile-popup">
       <!-- Profile information goes here -->
-      <h2>User Name</h2>
-      <p>Some additional details about the user.</p>
-      <!-- Add more profile details as needed -->
+      <div class="profile-header">
+        <img src="user-avatar.jpg" alt="User Avatar" class="avatar">
+        <div class="user-info">
+          <h2>User Name</h2>
+          <p>Status: Online</p>
+        </div>
+      </div>
+      <div class="profile-details">
+        <p><strong>Location:</strong> Some City, Country</p>
+        <p><strong>Interests:</strong> Gaming, Programming</p>
+        <!-- Add more profile details as needed -->
+      </div>
     </div>
   </div>
-  <!-- Paste the JavaScript code for the profile popup behavior here -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const profileButton = document.querySelector('.profile-button');
-      const profilePopup = document.querySelector('.profile-popup');
 
-      profileButton.addEventListener('click', function() {
-        // Toggle the display of the profile popup
-        profilePopup.style.display = profilePopup.style.display === 'block' ? 'none' : 'block';
-      });
-    });
-  </script>
   <!-- Add your script tags below -->
 </body>
 </html>
