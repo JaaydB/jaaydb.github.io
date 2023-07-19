@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!-- Add your head content here -->
-  <link rel="stylesheet" href="styles.css"/> <!-- Link to the external CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="vue-managed">{{ username }}</title>
+    <!-- Import Font Awesome Icon Kit -->
+    <script src="https://kit.fontawesome.com/6e5392ed44.js" crossorigin="anonymous"></script>
+    <!-- Import Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Import Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.css">
+    <!-- Import Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+
 </head>
 <body>
-  <!-- Your existing webpage content -->
-
-  <!-- Paste the profile container code here -->
-  <div class="profile-container">
-    <button class="profile-button">Open Profile</button>
-    <div class="profile-popup">
-      <!-- Profile information goes here -->
-      <div class="profile-header">
-        <img src="https://w7.pngwing.com/pngs/398/764/png-transparent-arch-linux-arch-hurd-pi-miscellaneous-cdr-angle-thumbnail.png" alt="User Avatar" class="avatar">
-        <div class="user-info">
-          <h2>User Name</h2>
-          <p>Status: Online</p>
+    <div class="box profile">
+        <div class="top-part">
+            <img class="profile-picture" v-bind:src="profile_picture" alt="Profile Picture" />
+            <p class="name">{{ username }}</p>
+            <ul class="badges">
+                <li v-for="badge in badges"><img v-bind:src="badge.image" v-bind:alt="badge.id" /></li>
+            </ul>
         </div>
-      </div>
-      <div class="profile-details">
-        <p><strong>Location:</strong> Montevideo, Uruguay</p>
-        <p><strong>Interests:</strong> Cybersecurity</p>
-        <!-- Add more profile details as needed -->
-      </div>
+        <div class="middle-part">
+        <div class="bio">
+            <p v-html="description"></p>
+        </div>
+        <hr>
+        <div class="projects">
+            <h1>The projects I work on:</h1>
+            <a v-for="project in projects" class="project-box" v-bind:href="project.link" target="_blank" v-bind:id="project.id">
+                <img v-bind:src="project.image" v-bind:alt="project.name" />
+                <p>{{ project.name }}</p>
+            </a>
+        </div>
+        </div>
+        <div class="bottom-part">
+            <ul class="social">
+                <li v-for="social in socials"><a v-bind:class="social.class_name" v-bind:href="social.link" target="_blank"></a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <!-- Add your script tags below -->
+    <script src="./assets/config.js"></script>
+    <script src="./assets/app.js"></script>
+
 </body>
 </html>
