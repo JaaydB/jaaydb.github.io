@@ -1,6 +1,6 @@
 const config = {
     
-    USERNAME: "Hugoto69#4975",
+    USERNAME: "Jaaydb",
     PICTURE: "assets/img/profile_picture.png",
 
     DESCRIPTION: "Welcome to my Discord Profile!",
@@ -15,7 +15,7 @@ const config = {
     ],
 
     SOCIALS: [
-        { class_name: "fab fa-github", link: "https://github.com/Hugoto69" },
+        { class_name: "fab fa-github", link: "https://github.com/JaaydB" },
     ],
 
 }
